@@ -61,7 +61,7 @@ Para revisar la web compilada como en producción (con gzip):
 node scripts/serve.mjs out 4400
 ```
 
-En Windows con Git Bash, al pasar rutas que empiezan por `/` (p. ej. `BASE_PATH=/Trenchs-Advisory`), antepón
+En Windows con Git Bash, al pasar rutas que empiezan por `/` (p. ej. `BASE_PATH=/trenchsAdvisory_V2`), antepón
 `MSYS_NO_PATHCONV=1` para que Git Bash no las convierta en rutas de Windows.
 
 ## Estructura
@@ -91,13 +91,15 @@ El contenido vive en `src/content/` separado de la presentación: para cambiar u
 
 | Variable | Uso | Ejemplo |
 |---|---|---|
-| `BASE_PATH` | Subruta de publicación. Vacía con dominio propio. | `/Trenchs-Advisory` (GitHub Pages, como la v1) |
+| `BASE_PATH` | Subruta de publicación. Vacía con dominio propio. | `/trenchsAdvisory_V2` (GitHub Pages de este repositorio) |
 | `SITE_URL` | URL pública sin barra final, para canonical, sitemap y Open Graph. Por defecto, `https://enriquerodrigueztrenchsporta.github.io` + `BASE_PATH`. | `https://www.trenchsadvisory.com` |
 
-- **Dominio propio (recomendado):** `SITE_URL=https://… npm run build` y subir `out/` a cualquier hosting estático.
-- **GitHub Pages en la misma URL que la v1:** `BASE_PATH=/Trenchs-Advisory npm run build`. El flujo
-  `.github/workflows/deploy.yml` lo hace, pero **solo se ejecuta a mano** (`workflow_dispatch`): publicar requiere
-  autorización expresa del propietario.
+- **Publicación actual (GitHub Pages):** https://enriquerodrigueztrenchsporta.github.io/trenchsAdvisory_V2/, una ruta
+  propia que convive con la v1 (`/Trenchs-Advisory/`). El flujo `.github/workflows/deploy.yml` compila con
+  `BASE_PATH=/trenchsAdvisory_V2` y **solo se ejecuta a mano** (*Actions → Publicar en GitHub Pages → Run workflow*):
+  cada publicación requiere autorización expresa del propietario.
+- **Dominio propio (recomendado a futuro):** `SITE_URL=https://… npm run build` y subir `out/` a cualquier hosting
+  estático, o configurar el dominio en GitHub Pages y vaciar `BASE_PATH`.
 
 Las rutas son las mismas que en la v1, así que no hacen falta redirecciones 301. Si en el futuro cambia alguna ruta,
 habrá que usar un hosting que admita redirecciones (GitHub Pages no las admite).

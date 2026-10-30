@@ -1,4 +1,4 @@
-# Publicación en GitHub Pages en la misma URL que la v1 (/Trenchs-Advisory).
+# Publicación en GitHub Pages en la ruta propia de este repositorio (/trenchsAdvisory_V2), sin tocar la v1.
 # Solo se ejecuta a mano: publicar requiere autorización expresa del propietario.
 name: Publicar en GitHub Pages
 
@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      BASE_PATH: /Trenchs-Advisory
+      BASE_PATH: /trenchsAdvisory_V2
       NEXT_TELEMETRY_DISABLED: 1
     steps:
       - uses: actions/checkout@v4
