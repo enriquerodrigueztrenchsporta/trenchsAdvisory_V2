@@ -60,6 +60,7 @@ export function parseAmount(raw: string): ParseResult {
 const eur = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: 'always' } as Intl.NumberFormatOptions);
 const eurShort = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0, useGrouping: 'always' } as Intl.NumberFormatOptions);
 const pct = new Intl.NumberFormat('es-ES', { style: 'percent', minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const pctShort = new Intl.NumberFormat('es-ES', { style: 'percent', minimumFractionDigits: 0, maximumFractionDigits: 1 });
 const nbsp = (s: string) => s.replace(/ /g, ' ');
 
 /** 2500000 → «25.000,00 €». */
@@ -68,5 +69,7 @@ export const formatEUR = (cents: Cents): string => nbsp(eur.format((cents === 0 
 export const formatEURShort = (cents: Cents): string => nbsp(eurShort.format(Math.round(cents / 100) || 0));
 /** 0.1234 → «12,3 %». */
 export const formatPct = (ratio: number): string => nbsp(pct.format(Math.abs(ratio) < 0.0005 ? 0 : ratio));
+/** 0.66 → «66 %», 0.123 → «12,3 %» (tablas del dashboard). */
+export const formatPctShort = (ratio: number): string => nbsp(pctShort.format(Math.abs(ratio) < 0.0005 ? 0 : ratio));
 /** Céntimos → texto editable en un campo («25000,5» → «25.000,50»). */
 export const centsToInput = (cents: Cents): string => formatEUR(cents).replace(/\s?€$/, '');

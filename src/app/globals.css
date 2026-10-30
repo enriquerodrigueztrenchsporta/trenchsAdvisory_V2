@@ -24,6 +24,8 @@
   --color-line: #d7d2c6;
   /* Solo para pérdidas y valores negativos en la calculadora (texto AA sobre crema). */
   --color-loss: #9c3b2a;
+  /* Su equivalente sobre verde profundo (panel de la calculadora). */
+  --color-loss-soft: #f0a796;
 
   --font-serif: 'Newsreader', 'Newsreader Fallback', Georgia, serif;
   --font-sans: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', sans-serif;

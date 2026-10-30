@@ -13,9 +13,9 @@ export default function ProfitabilityCalculatorPage() {
     <>
       <PageHero
         compact
-        kicker={tool.name}
-        title="¿Sabes cuánto gana realmente tu empresa?"
-        lead="Descubre tus márgenes, comprende tus costes y simula cómo mejorar tu rentabilidad. Gratis y sin registro."
+        kicker="Trenchs Financial Lab"
+        title={tool.name}
+        lead="Cuatro datos de tu negocio y verás al instante tu resultado, tu margen y tu punto de equilibrio. Gratis y sin registro."
         crumbs={[{ name: TOOLS_INTRO.kicker, href: '/herramientas' }, { name: tool.name, href: toolPath(tool) }]}
       />
       <Calculator />
