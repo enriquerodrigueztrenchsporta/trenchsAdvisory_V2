@@ -28,7 +28,7 @@ export function Tailored() {
             >
               <span className="num">{pad(i + 1)}</span>
               <h3 className="title mt-5">{p.t}</h3>
-              <p className="mt-4 max-w-[46ch] text-ink-soft">{p.d}</p>
+              <p className="mt-4 max-w-[28rem] text-ink-soft">{p.d}</p>
               {p.modes && (
                 <ul className="mt-6 flex flex-wrap gap-2" aria-label="Modalidades de colaboración">
                   {p.modes.map((mode) => (

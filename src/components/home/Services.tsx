@@ -66,7 +66,7 @@ export function Services() {
                   <span className="block font-serif text-[clamp(1.75rem,2.6vw,2.4rem)] leading-[1.05] tracking-[-0.025em] transition-colors duration-500 group-hover:text-cream-50">
                     {s.name}
                   </span>
-                  <span className="mt-3 block max-w-[30ch] text-[0.95rem] text-ink-soft transition-colors duration-500 group-hover:text-cream-50/80">
+                  <span className="mt-3 block max-w-[18rem] text-[0.95rem] text-ink-soft transition-colors duration-500 group-hover:text-cream-50/80">
                     {s.subtitle}
                   </span>
                   <span className="mt-6 flex items-center justify-between border-t border-line pt-4 text-[0.8rem] transition-colors duration-500 group-hover:border-cream-50/15">

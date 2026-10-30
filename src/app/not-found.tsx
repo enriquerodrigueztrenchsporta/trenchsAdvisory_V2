@@ -12,7 +12,7 @@ export default function NotFound() {
       <LogoMark mono className="pointer-events-none absolute -right-[10%] top-1/2 w-[48rem] max-w-[120vw] -translate-y-1/2 text-cream-50/[0.04]" />
       <div className="wrap relative py-36">
         <p className="eyebrow">Error 404</p>
-        <h1 className="display-xl mt-7 max-w-[14ch]">
+        <h1 className="display-xl mt-7 max-w-[7.5em]">
           <span className="hero-line">Esta página no existe.</span>
         </h1>
         <p className="lead mt-8">Puede volver a la portada o ir directamente a una de nuestras áreas de servicio.</p>

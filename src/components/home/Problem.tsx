@@ -19,12 +19,12 @@ export function Problem() {
           <p className="eyebrow" data-reveal>
             {PROBLEM.eyebrow}
           </p>
-          <h2 id="enfoque-titulo" className="display mt-8 max-w-[14ch]" data-reveal style={delay(1)}>
+          <h2 id="enfoque-titulo" className="display mt-8 max-w-[7.5em]" data-reveal style={delay(1)}>
             {PROBLEM.title}
           </h2>
           <ScrollWords
             parts={PROBLEM.lead}
-            className="mt-12 max-w-[30ch] font-serif text-[clamp(1.5rem,2.6vw,2.25rem)] leading-[1.25] tracking-tight"
+            className="mt-12 max-w-[15em] font-serif text-[clamp(1.5rem,2.6vw,2.25rem)] leading-[1.25] tracking-tight"
           />
         </div>
 

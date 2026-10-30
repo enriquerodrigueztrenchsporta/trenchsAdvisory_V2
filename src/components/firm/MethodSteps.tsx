@@ -33,7 +33,7 @@ export function MethodSteps() {
             </span>
             <div className="pt-1.5">
               <h3 className="font-serif text-[clamp(1.75rem,2.6vw,2.4rem)] leading-tight tracking-tight">{p.name}</h3>
-              <p className="mt-3 max-w-[46ch] text-ink-soft">{p.goal}</p>
+              <p className="mt-3 max-w-[28rem] text-ink-soft">{p.goal}</p>
               <p className="mt-5 inline-flex items-center gap-3 rounded-full bg-cream-100 px-4 py-2 text-[0.92rem] font-medium text-forest-900">
                 <span className="text-[0.68rem] uppercase tracking-[0.16em] text-gold-700">Resultado</span>
                 {p.result}

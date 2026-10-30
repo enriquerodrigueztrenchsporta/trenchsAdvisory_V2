@@ -36,7 +36,7 @@ export function Closing({ kicker, title, text }: Props) {
         <p className="eyebrow" data-reveal>
           {c.kicker}
         </p>
-        <h2 id="contacto-titulo" className="display-xl mt-8 max-w-[15ch]" data-reveal style={delay(1)}>
+        <h2 id="contacto-titulo" className="display-xl mt-8 max-w-[8em]" data-reveal style={delay(1)}>
           {c.title}
         </h2>
         <div className="mt-12 grid gap-10 md:grid-cols-12 md:items-end">

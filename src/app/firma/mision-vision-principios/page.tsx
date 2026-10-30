@@ -32,7 +32,7 @@ export default function PurposePage() {
             as="blockquote"
             parts={mission.parts}
             emClass="italic"
-            className="mt-12 max-w-[22ch] font-serif text-[clamp(2.1rem,4.6vw,4.4rem)] leading-[1.08] tracking-[-0.025em]"
+            className="mt-12 max-w-[11.5em] font-serif text-[clamp(2.1rem,4.6vw,4.4rem)] leading-[1.08] tracking-[-0.025em]"
           />
         </div>
       </section>
