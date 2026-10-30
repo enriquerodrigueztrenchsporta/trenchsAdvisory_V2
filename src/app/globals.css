@@ -1,0 +1,554 @@
+@import 'tailwindcss';
+
+/* Las @font-face están en src/app/layout.tsx para llevar el prefijo BASE_PATH. */
+
+/* Paleta de la v1 (contrastes AA documentados) más forest-950 para los fondos oscuros profundos.
+   Texto sobre crema: ink, ink-soft, ink-mute, gold-700. Texto sobre verde: cream-50 (≥ 70 %), forest-300, gold-300.
+   gold-500 y forest-400: solo trazos y fondos decorativos. */
+@theme {
+  --color-forest-950: #14261f;
+  --color-forest-900: #1f3a33;
+  --color-forest-800: #274840;
+  --color-forest-600: #3e6b5e;
+  --color-forest-400: #7a9e91;
+  --color-forest-300: #9db5ac;
+  --color-gold-700: #7a5c25;
+  --color-gold-500: #b08a3e;
+  --color-gold-300: #d4b778;
+  --color-cream-50: #f5f3ee;
+  --color-cream-100: #edeae2;
+  --color-cream-200: #e2ddd1;
+  --color-ink: #1a1c1b;
+  --color-ink-soft: #4d524f;
+  --color-ink-mute: #666a66;
+  --color-line: #d7d2c6;
+
+  --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+    color-scheme: light;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html:not(.motion-paused) {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    background: var(--color-cream-50);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-gold-300);
+    color: var(--color-forest-950);
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus, var(--color-forest-900));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .on-dark {
+    --focus: var(--color-gold-300);
+  }
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 3.5rem);
+  }
+  .section {
+    padding-block: clamp(5rem, 11vw, 9.5rem);
+  }
+
+  /* Etiqueta: numeración + nombre de sección. */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+  .on-dark .eyebrow {
+    color: var(--color-forest-300);
+  }
+
+  .display-xl {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: clamp(2.75rem, 7.4vw, 6.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+  .display {
+    font-size: clamp(2.2rem, 4.6vw, 4.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+  .title {
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    line-height: 1.15;
+  }
+  .lead {
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--color-ink-soft);
+    max-width: 38rem;
+  }
+  .on-dark .lead {
+    color: color-mix(in srgb, var(--color-cream-50) 78%, transparent);
+  }
+  .num {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-gold-700);
+  }
+  .on-dark .num {
+    color: var(--color-gold-300);
+  }
+
+  /* Botones */
+  .btn {
+    --btn-bg: var(--color-forest-900);
+    --btn-fg: var(--color-cream-50);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 3.25rem;
+    padding: 0.9rem 1.15rem 0.9rem 1.5rem;
+    border-radius: 999px;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    isolation: isolate;
+    overflow: hidden;
+    transition:
+      transform 0.5s var(--ease-out-expo),
+      box-shadow 0.5s var(--ease-out-expo);
+  }
+  .btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--btn-hover, var(--color-forest-800));
+    transform: translateY(101%);
+    border-radius: inherit;
+    transition: transform 0.55s var(--ease-out-expo);
+  }
+  .btn:hover::before {
+    transform: none;
+  }
+  .btn:hover {
+    box-shadow: 0 18px 40px -18px rgb(20 38 31 / 0.55);
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn__icon {
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 999px;
+    background: var(--btn-icon-bg, var(--color-gold-500));
+    color: var(--color-forest-950);
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+  .btn:hover .btn__icon {
+    transform: translateX(3px) rotate(-45deg);
+  }
+  .btn--light {
+    --btn-bg: var(--color-cream-50);
+    --btn-fg: var(--color-forest-950);
+    --btn-hover: var(--color-gold-300);
+    --btn-icon-bg: var(--color-forest-900);
+  }
+  .btn--light .btn__icon {
+    color: var(--color-cream-50);
+  }
+  .btn--ghost {
+    --btn-bg: transparent;
+    --btn-fg: currentColor;
+    --btn-hover: color-mix(in srgb, currentColor 10%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 35%, transparent);
+    padding-inline: 1.4rem;
+  }
+  .btn--ghost:hover {
+    box-shadow: inset 0 0 0 1px currentColor;
+  }
+  .btn--sm {
+    min-height: 2.6rem;
+    padding: 0.5rem 0.6rem 0.5rem 1.1rem;
+    font-size: 0.875rem;
+    gap: 0.6rem;
+  }
+  .btn--sm .btn__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  /* Enlace con subrayado que se dibuja */
+  .ulink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+    padding-bottom: 0.2rem;
+    transition: background-size 0.5s var(--ease-out-expo);
+  }
+  .ulink:hover {
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+  }
+  .ulink .arrow {
+    transition: transform 0.45s var(--ease-out-expo);
+  }
+  .ulink:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  /* Textura de grano muy sutil para los planos oscuros. */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    padding: 0.75rem 1rem;
+    background: var(--color-forest-900);
+    color: var(--color-cream-50);
+    border-radius: 0.5rem;
+    transform: translateY(-200%);
+    transition: transform 0.2s;
+  }
+  .skip-link:focus {
+    transform: none;
+  }
+}
+
+/* ── Apariciones al hacer scroll ─────────────────────────────────────────────
+   Solo se ocultan si hay JavaScript (clase .js) y movimiento permitido. --d escalona los elementos. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.9s var(--ease-soft),
+    transform 1.1s var(--ease-out-expo);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+.js [data-reveal='fade'] {
+  transform: none;
+}
+.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Trazos SVG que se dibujan (pathLength="1"). */
+.draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1.6s var(--ease-out-expo);
+  transition-delay: calc(var(--d, 0) * 110ms);
+}
+.is-in .draw,
+.draw.is-in {
+  stroke-dashoffset: 0;
+}
+html:not(.js) .draw {
+  stroke-dashoffset: 0;
+}
+
+/* ── Hero: entrada por capas solo con CSS (el titular es visible desde el primer fotograma: LCP) ── */
+@keyframes rise {
+  from {
+    transform: translate3d(0, 0.35em, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes draw-in {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes pulse-along {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -0.25;
+    opacity: 0;
+  }
+}
+@keyframes ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+.hero-line {
+  display: block;
+  animation: rise 1.1s var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+.hero-in {
+  animation: fade-up 1s var(--ease-out-expo) both;
+  animation-delay: calc(300ms + var(--i, 0) * 90ms);
+}
+
+/* ── Diagrama del hero: cuatro fuentes que convergen en una decisión ── */
+.flow-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-in 2s var(--ease-out-expo) forwards;
+  animation-delay: calc(500ms + var(--delay, 0s));
+}
+.flow-pulse {
+  stroke-dasharray: 0.06 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  animation: pulse-along 3.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation-delay: calc(2.6s + var(--delay, 0s));
+}
+.flow-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ring 2.8s var(--ease-soft) infinite 2.4s;
+}
+.flow-fade {
+  opacity: 0;
+  animation: fade-up 1s var(--ease-out-expo) forwards;
+  animation-delay: calc(900ms + var(--i, 0) * 120ms);
+}
+
+/* ── Problema: trazos dispersos que se ordenan en una sola visión ── */
+.scatter > * {
+  transition:
+    transform 1.4s var(--ease-out-expo),
+    opacity 1s var(--ease-soft);
+  transition-delay: calc(200ms + var(--i, 0) * 80ms);
+  transform: translate(var(--sx), var(--sy)) rotate(var(--r));
+}
+.scatter.is-in > *,
+html:not(.js) .scatter > * {
+  transform: none;
+}
+
+/* ── Movimiento reducido o «Pausar animaciones»: todo quieto y visible ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+  .draw {
+    stroke-dashoffset: 0;
+  }
+  .loop {
+    display: none;
+  }
+}
+/* Igual que el movimiento reducido: cada animación salta a su estado final (nada queda a medio dibujar). */
+.motion-paused *,
+.motion-paused *::before,
+.motion-paused *::after {
+  animation-duration: 0.01ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  transition-delay: 0ms !important;
+}
+.motion-paused.js [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+.motion-paused .draw {
+  stroke-dashoffset: 0;
+}
+.motion-paused .loop {
+  display: none;
+}
+
+/* ── Tablas de servicio en móvil: cada fila es una ficha con etiquetas ── */
+@media (max-width: 1023.98px) {
+  .svc-table,
+  .svc-table tbody {
+    display: block;
+  }
+  .svc-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+}
+
+/* ── Textos legales ── */
+.legal {
+  color: var(--color-ink-soft);
+}
+.legal h2 {
+  margin-top: 3.5rem;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+.legal section:first-child h2,
+.legal > p:first-child + section h2 {
+  margin-top: 0;
+}
+.legal > p:first-child {
+  margin-bottom: 3rem;
+}
+.legal h3 {
+  margin-top: 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-ink);
+}
+.legal p,
+.legal ul,
+.legal dl {
+  margin-top: 1rem;
+}
+.legal ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+.legal li + li {
+  margin-top: 0.4rem;
+}
+.legal a {
+  color: var(--color-forest-900);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.legal strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.legal code {
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: 0.3rem;
+  background: var(--color-cream-100);
+}
+.legal dl {
+  display: grid;
+  grid-template-columns: minmax(8rem, max-content) 1fr;
+  gap: 0.6rem 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: 1rem;
+  background: var(--color-cream-100);
+}
+.legal dt {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+.legal dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 520px) {
+  .legal dl {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
