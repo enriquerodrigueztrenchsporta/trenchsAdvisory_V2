@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 648">
+  <path fill="#1F3A33" d="M0 0H247C247 60 262 110 290 210C310 290 318 340 322 387H0Z"/>
+  <path fill="#1F3A33" d="M345 0H648V387H419C412 330 400 280 385 210C360 110 345 60 345 0Z"/>
+  <path fill="#1F3A33" d="M0 432H327V485H0Z"/>
+  <path fill="#1F3A33" d="M424 432H648V485H424Z"/>
+  <path fill="#3E6B5E" d="M0 529H325L315 648H0Z"/>
+  <path fill="#3E6B5E" d="M422 529H648V648H412Z"/>
+  <text x="820" y="312" fill="#1F3A33" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="150" font-weight="300" letter-spacing="42">TRENCHS</text>
+  <text x="822" y="448" fill="#3E6B5E" font-family="Inter, Roboto, Helvetica, Arial, sans-serif" font-size="66" font-weight="400" letter-spacing="38">ADVISORY</text>
+</svg>
