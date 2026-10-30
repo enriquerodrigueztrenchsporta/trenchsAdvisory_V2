@@ -23,8 +23,8 @@
   --color-ink-mute: #666a66;
   --color-line: #d7d2c6;
 
-  --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader', 'Newsreader Fallback', Georgia, serif;
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);

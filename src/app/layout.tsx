@@ -28,7 +28,13 @@ export const viewport: Viewport = {
 };
 
 // @font-face aquí (y no en globals.css) para que las URLs lleven el prefijo BASE_PATH.
+// Las fuentes «Fallback» ajustan Georgia y Arial a las métricas de Newsreader e Inter (@capsizecss/metrics:
+// anchura media, ascendente y descendente): al cargar la fuente propia el texto no cambia de tamaño, lo que evita
+// desplazamientos (CLS) y que el titular cuente dos veces como LCP.
 const fontFaces = `
+@font-face{font-family:'Newsreader Fallback';src:local('Georgia');size-adjust:96.12%;ascent-override:76.47%;descent-override:27.57%;line-gap-override:0%}
+@font-face{font-family:'Newsreader Fallback';font-style:italic;src:local('Georgia Italic'),local('Georgia-Italic');size-adjust:96.12%;ascent-override:76.47%;descent-override:27.57%;line-gap-override:0%}
+@font-face{font-family:'Inter Fallback';src:local('Arial');size-adjust:107.12%;ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%}
 @font-face{font-family:'Newsreader';font-style:normal;font-weight:300;font-display:swap;src:url('${asset('/fonts/newsreader-300.woff2')}') format('woff2')}
 @font-face{font-family:'Newsreader';font-style:italic;font-weight:300;font-display:swap;src:url('${asset('/fonts/newsreader-300-italic.woff2')}') format('woff2')}
 @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('${asset('/fonts/inter-var.woff2')}') format('woff2')}
