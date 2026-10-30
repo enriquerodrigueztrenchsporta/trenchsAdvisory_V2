@@ -9,7 +9,7 @@ la v1 se conserva; las tres reformulaciones están en `docs/03-correspondencia-v
 
 ### Cambiado
 
-- **Stack:** de Astro 7 a Next.js 15 (exportación estática), React 19, TypeScript, Tailwind CSS 4 y Framer Motion 12.
+- **Stack:** de Astro 7 a Next.js 15 (exportación estática), React 19, TypeScript, Tailwind CSS 4, Framer Motion 12 y anime.js 4.
 - **Dirección artística:** composición editorial con dos planos de color (crema y verde profundo `#14261F`, nuevo tono
   dentro de la paleta de la v1), Newsreader a gran escala, el corte del logotipo como motivo gráfico y grano sutil en
   los planos oscuros.
@@ -30,6 +30,10 @@ la v1 se conserva; las tres reformulaciones están en `docs/03-correspondencia-v
 
 ### Añadido
 
+- «Del dato a la decisión»: campo de 60 puntos de datos animado con anime.js 4 en «Cómo pensamos» (escritorio). Con
+  cada pregunta los puntos se reorganizan: cuadro de mando, causas, previsión con incertidumbre, alternativas y
+  ejecución. Decorativo; anime.js solo se descarga en escritorio, y con «Pausar animaciones» o movimiento reducido los
+  puntos se colocan sin animar.
 - Acción principal «Solicitar diagnóstico» en más puntos: barra fija en móvil, tras el método y en el hero de cada
   servicio.
 - Botón «Copiar correo» junto al enlace de correo, para quien no tiene un programa de correo configurado.

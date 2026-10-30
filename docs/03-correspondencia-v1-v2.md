@@ -114,5 +114,7 @@ Microtextos de navegación sin datos de negocio:
 - Migas de pan: «Inicio», «Servicios», «La firma», «Información legal».
 - Etiqueta «Resultado» en cada fase del método (el texto del resultado es el de la v1).
 - Índice de las páginas legales: «Índice».
+- Etiquetas del campo de datos animado (decorativo, oculto a lectores de pantalla): «Cuadro de mando», «Causas»,
+  «Previsión», «Alternativas», «Ejecución».
 - Página 404: «Error 404», «Esta página no existe.», «Puede volver a la portada o ir directamente a una de nuestras
   áreas de servicio.», «Volver a la portada».

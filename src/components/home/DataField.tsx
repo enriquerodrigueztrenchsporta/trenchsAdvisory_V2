@@ -150,7 +150,7 @@ export function DataField({ step }: { step: number }) {
     <div aria-hidden="true" className="relative mt-8 hidden lg:block">
       <div ref={stage} className="relative overflow-hidden rounded-[1.25rem] border border-cream-50/10 bg-forest-950/40" style={{ width: W, height: H }}>
         {/* Guías de cada escena (solo trazos, sin datos). */}
-        <svg className="absolute inset-0" width={W} height={H} viewBox={`0 0 ${W} ${H}`} fill="none">
+        <svg className="absolute inset-0" width={W} height={H} viewBox={`0 0 ${W} ${H}`} fill="none" aria-hidden="true">
           <line x1="20" x2={W - 20} y1={H - 12} y2={H - 12} stroke={C.base} strokeOpacity={step <= 1 ? 0.3 : 0} className="transition-[stroke-opacity] duration-700" />
           <line
             x1={24 + (40 / (N - 1)) * (W - 48)}

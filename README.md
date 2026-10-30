@@ -30,6 +30,7 @@ Documentación del proceso en `docs/`:
 - Next.js 15 (App Router) con exportación estática (`output: 'export'`): HTML estático servible desde cualquier hosting.
 - React 19, TypeScript estricto, Tailwind CSS 4.
 - Framer Motion 12 con `LazyMotion` (las funciones de animación se cargan aparte).
+- anime.js 4 para el campo de datos de «Cómo pensamos» (carga diferida, solo en escritorio).
 - Fuentes Newsreader e Inter autoalojadas (sin peticiones a terceros, sin cookies), con fuentes de reserva ajustadas a
   sus métricas.
 
