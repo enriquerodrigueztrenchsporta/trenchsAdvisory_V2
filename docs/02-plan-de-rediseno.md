@@ -37,9 +37,12 @@ de los datos a una decisión ejecutada. La v2 convierte esa idea en el hilo visu
 | 3 | Cinco preguntas (sticky) | Cómo piensan; une preguntas y áreas | H-03 + H-04 (fusionadas) |
 | 4 | Servicios | Qué compran | H-04, S1–S5 |
 | 5 | Método | Cómo trabajan y qué entregan en cada fase | H-05 + resultados M1–M5 |
-| 6 | Por qué nosotros + A la medida | Prueba de calidad disponible (sin testimonios) | H-06, F-05 resumido |
-| 7 | Cómo empezar | Información práctica: primera conversación, encargo acotado, modalidades, remoto | H-06, F-09, D7, D8 |
-| 8 | Cierre | Acción principal | H-07 |
+| 6 | A la medida | Cómo se adapta y cómo se empieza: encargo acotado, modalidades; enlaces a Quiénes somos y Método | H-06 |
+| 7 | Cierre | Acción principal | H-07 |
+
+Cambio durante la implementación: las secciones «Por qué nosotros» y «Cómo empezar» previstas inicialmente no se
+añadieron a la portada porque repetían textos de Quiénes somos y Método, y la v1 eliminó a propósito el contenido
+repetido entre páginas (commit `be8396c`). La portada enlaza a esas páginas en su lugar.
 
 Los testimonios no se publican hasta que existan (ver [PENDIENTE] P2).
 
