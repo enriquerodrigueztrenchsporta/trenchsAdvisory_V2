@@ -43,10 +43,10 @@ Con `BASE_PATH=/Trenchs-Advisory` la v2 reproduce también la subruta de GitHub 
 | ID | Bloque v1 | v2 | Estado |
 |---|---|---|---|
 | H-01 | Hero: kicker, H1 (lema), entradilla, CTA, diagrama | Hero: kicker igual; H1 nuevo a partir de la entradilla; entradilla a partir de las descripciones de la v1; CTA; diagrama redibujado; franja con las cinco áreas | Reformulado (ver 7) |
-| H-02 | 01 · Negocio primero | Sección 2 «Negocio primero»: titular, entradilla que se ilumina al leer, diagrama «Una visión» | Igual |
-| H-03 | 02 · Cómo pensamos (pestañas automáticas) | Sección 3: las cinco preguntas en un recorrido ligado al scroll, con disciplina, entregable y enlace a las áreas que responden a cada una | Igual; interacción nueva (corrige WCAG 2.2.2) |
-| H-04 | 03 · Capacidades | Sección 4 «Capacidades»: titular, entradilla, diagrama «Mejores decisiones», tarjeta por área (nombre, subtítulo, claim, n.º de servicios) | Igual; añade el claim de cada área (de la v1) |
-| H-05 | 04 · Método | Sección 5 «Método»: titular, entradilla, cinco fases con su objetivo, enlace «Ver el método completo» + CTA | Igual |
+| H-02 | 01 · Negocio primero | Sección 3 «Negocio primero»: titular, entradilla que se ilumina al leer, diagrama «Una visión» | Igual |
+| H-03 | 02 · Cómo pensamos (pestañas automáticas) | Sección 4: las cinco preguntas en un recorrido ligado al scroll, con disciplina, entregable y enlace a las áreas que responden a cada una | Igual; interacción nueva (corrige WCAG 2.2.2) |
+| H-04 | 03 · Capacidades | Sección 5 «Capacidades»: titular, entradilla, diagrama «Mejores decisiones», tarjeta por área (nombre, subtítulo, claim, n.º de servicios) | Igual; añade el claim de cada área (de la v1) |
+| H-05 | 04 · Método | Sección 2 «Método», justo después del hero: recorrido ligado al scroll (anime.js) que pasa por las cinco fases con su objetivo, con una ilustración por fase; enlace «Ver el método completo» + CTA. Con «Pausar animaciones», lista estática | Igual; reubicado y con interacción nueva |
 | H-06 | 05 · A la medida | Sección 6 «A la medida»: cuatro puntos, modalidades y enlaces a Quiénes somos y Método | Igual |
 | H-07 | Cierre «Primer paso» | Cierre | Igual + Copiar correo |
 | Q1–Q5 | Preguntas, disciplina, entregable | Portada (sección 3), hero de cada servicio | Igual |
@@ -114,6 +114,7 @@ Microtextos de navegación sin datos de negocio:
 - Migas de pan: «Inicio», «Servicios», «La firma», «Información legal».
 - Etiqueta «Resultado» en cada fase del método (el texto del resultado es el de la v1).
 - Índice de las páginas legales: «Índice».
+- Navegación del recorrido del método: «Fase 01 / 05»… y botones con el nombre de cada fase.
 - Etiquetas del campo de datos animado (decorativo, oculto a lectores de pantalla): «Cuadro de mando», «Causas»,
   «Previsión», «Alternativas», «Ejecución».
 - Página 404: «Error 404», «Esta página no existe.», «Puede volver a la portada o ir directamente a una de nuestras

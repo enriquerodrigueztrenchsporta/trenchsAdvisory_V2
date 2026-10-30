@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Hero } from '@/components/home/Hero';
-import { Method } from '@/components/home/Method';
+import { MethodStory } from '@/components/home/MethodStory';
 import { Problem } from '@/components/home/Problem';
 import { QuestionsStory } from '@/components/home/QuestionsStory';
 import { Services } from '@/components/home/Services';
@@ -50,10 +50,10 @@ export default function Home() {
         }}
       />
       <Hero />
+      <MethodStory />
       <Problem />
       <QuestionsStory />
       <Services />
-      <Method />
       <Tailored />
       <Closing />
     </>

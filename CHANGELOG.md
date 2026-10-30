@@ -17,7 +17,10 @@ la v1 se conserva; las tres reformulaciones están en `docs/03-correspondencia-v
   - el H1 pasa a decir qué hace la firma («Decisiones con evidencia, anticipación y criterio económico.»); el lema
     se mantiene en el pie;
   - las cinco áreas quedan a la vista desde el primer pantallazo;
-  - nuevo orden: negocio primero → cinco preguntas → capacidades → método → a la medida → cierre.
+  - nuevo orden: método → negocio primero → cinco preguntas → capacidades → a la medida → cierre;
+  - el método se cuenta con el scroll, al estilo de animejs.com: una línea de tiempo de anime.js avanza y retrocede con
+    el scroll y pasa por las cinco fases (lupa sobre la información, modelo conectado, logotipo que se ensambla, órbita
+    de adopción y ciclo de mejora). Textos de la v1 para la portada (fase y objetivo).
 - **Cinco preguntas:** las pestañas con avance automático pasan a ser un recorrido ligado al scroll, con disciplina,
   entregable y enlace a las áreas que responden a cada pregunta.
 - **Quiénes somos:** los cinco problemas de fondo muestran síntoma, causa y consecuencia sin necesidad de voltear
