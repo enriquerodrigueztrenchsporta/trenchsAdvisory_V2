@@ -7,13 +7,14 @@ import { DiagnosisButton } from '@/components/ui/primitives';
 
 /**
  * Acción principal siempre a mano en móvil: aparece tras el primer pantallazo y se oculta cuando el cierre
- * (#contacto, que ya tiene el botón) está en pantalla. No aparece en las páginas legales.
+ * (#contacto, que ya tiene el botón) está en pantalla. No aparece en las páginas legales ni en las herramientas
+ * (la calculadora tiene sus propios botones fijos de navegación y su acción de contacto).
  */
 export function MobileCta() {
   const pathname = usePathname();
   const [past, setPast] = useState(false);
   const [atClosing, setAtClosing] = useState(false);
-  const legal = pathname.startsWith('/legal');
+  const legal = pathname.startsWith('/legal') || pathname.startsWith('/herramientas/');
 
   useEffect(() => {
     const onScroll = () => setPast(window.scrollY > window.innerHeight * 0.8);

@@ -2,6 +2,26 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado semántico.
 
+## [2.1.0] - 2026-10-30
+
+### Añadido
+
+- **Herramientas gratuitas** (`/herramientas/`): nueva opción en la navegación de escritorio y móvil, con el título
+  «Entiende y mejora tu negocio» y un catálogo preparado para crecer (una sola tarjeta por ahora).
+- **Calculadora de Rentabilidad Empresarial** (`/herramientas/calculadora-rentabilidad/`): formulario guiado en cinco
+  pasos, motor financiero en céntimos con pruebas, dashboard con diez indicadores y tres gráficos (cascada, distribución
+  de gastos y punto de equilibrio), simulador de escenarios con objetivo de resultado, diagnóstico automático por
+  reglas y propuesta de servicios de la firma.
+- **Pop-up comercial y solicitud de contacto** con vista previa exacta de lo que se comparte y autorización separada
+  para incluir el análisis. Envío por correo prellenado (sistema actual); endpoint de servidor de referencia listo para
+  activar. Detalle en `docs/06-herramientas-gratuitas.md`.
+- `npm test` (node:test) y su ejecución en el flujo de publicación.
+
+### Cambiado
+
+- Privacidad y aviso legal: la web ya no dice que no tiene formularios; se explica el tratamiento de la calculadora.
+- La barra fija «Solicitar diagnóstico» de móvil no aparece en las herramientas.
+
 ## [2.0.0] - 2026-10-30
 
 Rediseño completo sobre el contenido de la v1.0 (repositorio `Trenchs-Advisory`, commit `cbbf95b`). Todo el texto de

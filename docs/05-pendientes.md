@@ -15,3 +15,5 @@ por impacto en la conversión.
 | P8 | **Clientes o sectores atendidos** | Credibilidad por referencia | Lista con permiso para publicarla | Franja bajo el hero |
 | P9 | **Validación de textos nuevos** | La v2 reformula el hero y añade microtextos de interfaz | Revisar `docs/03-correspondencia-v1-v2.md`, apartados 7 y 8 | — |
 | P10 | **Autorización de publicación** | Las normas del espacio de trabajo exigen autorización expresa | Decidir hosting y dominio | `README.md`, apartado «Despliegue» |
+| P11 | **Envío directo de la calculadora** | Hoy la solicitud se prepara en el correo de la persona y la web no puede confirmar que se envíe | Aprobar proveedor (referencia: Cloudflare Workers + Resend), cuentas y dominio verificado; revisar privacidad | `docs/06-herramientas-gratuitas.md`, «Activar el envío directo» |
+| P12 | **Revisión jurídica de los textos de la calculadora** | Nuevo tratamiento con consentimiento para compartir el análisis | Validar privacidad (apartado 2) y aviso legal (apartado 5) | `src/app/legal/` |

@@ -30,10 +30,22 @@ export default function PrivacyPage() {
             <>
               <h3>Datos que usted nos envía</h3>
               <p>
-                La web no tiene formularios. Si nos escribe por correo electrónico, por ejemplo con el botón «Solicitar
-                diagnóstico», tratamos los datos que usted decida incluir: normalmente su nombre, su dirección de correo, la
-                organización a la que pertenece, su cargo y el contenido de su consulta. Le pedimos que no nos envíe datos
-                especialmente protegidos (como datos de salud) ni datos de terceros que no sean necesarios.
+                Si nos escribe por correo electrónico, por ejemplo con el botón «Solicitar diagnóstico», tratamos los datos
+                que usted decida incluir: normalmente su nombre, su dirección de correo, la organización a la que pertenece,
+                su cargo y el contenido de su consulta. Le pedimos que no nos envíe datos especialmente protegidos (como datos
+                de salud) ni datos de terceros que no sean necesarios.
+              </p>
+              <h3>Herramientas gratuitas</h3>
+              <p>
+                La <Link href="/herramientas/calculadora-rentabilidad">Calculadora de Rentabilidad Empresarial</Link> hace
+                todos los cálculos en su navegador: no guardamos las cifras que introduce ni las enviamos a ningún servidor, y
+                desaparecen al cerrar la página. Si después nos pide contacto desde la propia herramienta, su programa de
+                correo prepara un mensaje con su nombre, su correo, y opcionalmente su empresa, su teléfono y un mensaje
+                adicional. Solo si marca la casilla de autorización, el mensaje incluye además los resultados de su análisis
+                (indicadores, diagnóstico y soluciones propuestas). Antes de enviarlo puede ver exactamente qué se compartirá,
+                y nada nos llega hasta que usted lo envía. Tratamos los datos de contacto con la finalidad y la base legal del
+                apartado 3; los resultados del análisis, además, con su consentimiento (art. 6.1.a RGPD), que puede retirar en
+                cualquier momento escribiéndonos.
               </p>
               <h3>Datos de navegación</h3>
               <p>

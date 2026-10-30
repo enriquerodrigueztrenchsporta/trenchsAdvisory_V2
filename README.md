@@ -24,6 +24,7 @@ Documentación del proceso en `docs/`:
 | [`03-correspondencia-v1-v2.md`](docs/03-correspondencia-v1-v2.md) | Dónde está cada contenido de la v1 en la v2 |
 | [`04-lighthouse.md`](docs/04-lighthouse.md) | Comparativa Lighthouse antes/después |
 | [`05-pendientes.md`](docs/05-pendientes.md) | Lo que debe aportar el negocio |
+| [`06-herramientas-gratuitas.md`](docs/06-herramientas-gratuitas.md) | Calculadora de Rentabilidad: fórmulas, reglas, contacto y configuración pendiente |
 
 ## Stack
 
@@ -44,6 +45,7 @@ npm run dev        # http://localhost:3000
 npm run build      # genera out/
 npm run verify     # comprueba out/ (ver más abajo)
 npm run typecheck
+npm test           # pruebas del motor financiero y de la solicitud de contacto (node:test)
 ```
 
 `npm run verify` revisa la web compilada:
@@ -77,8 +79,13 @@ src/
     motion/            proveedor de movimiento, apariciones, texto que se ilumina
     seo/               datos estructurados y migas de pan
     ui/                botones, enlaces, cabeceras de sección, copiar correo
+    tools/             tarjeta del catálogo de Herramientas gratuitas
+    calculator/        Calculadora de Rentabilidad: pasos, dashboard, gráficos, simulador, pop-up
   content/             contenido migrado de la v1 (servicios, firma, titular)
   lib/                 datos de contacto, URLs y metadatos
+    profitability/     motor financiero puro (cálculo, escenarios, diagnóstico, soluciones) y sus pruebas
+    contact/           mensaje comercial, envío (mailto o endpoint) y validación de servidor
+server/                endpoint de contacto de referencia (no desplegado)
 scripts/               verificación, servidor estático y copia de fuentes
 docs/                  auditoría, plan, correspondencia, Lighthouse, pendientes
 ```
@@ -92,6 +99,7 @@ El contenido vive en `src/content/` separado de la presentación: para cambiar u
 | Variable | Uso | Ejemplo |
 |---|---|---|
 | `BASE_PATH` | Subruta de publicación. Vacía con dominio propio. | `/trenchsAdvisory_V2` (GitHub Pages de este repositorio) |
+| `NEXT_PUBLIC_CONTACT_ENDPOINT` | Opcional. URL del endpoint de contacto de la calculadora; vacío, la solicitud se prepara por correo (`mailto:`). Ver `docs/06-herramientas-gratuitas.md`. | `https://contacto.ejemplo.workers.dev` |
 | `SITE_URL` | URL pública sin barra final, para canonical, sitemap y Open Graph. Por defecto, `https://enriquerodrigueztrenchsporta.github.io` + `BASE_PATH`. | `https://www.trenchsadvisory.com` |
 
 - **Publicación actual (GitHub Pages):** https://enriquerodrigueztrenchsporta.github.io/trenchsAdvisory_V2/, una ruta

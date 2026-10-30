@@ -1,6 +1,6 @@
 {
   "name": "trenchs-advisory-web-v2",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "description": "Web de Trenchs Advisory, versión 2.0",
   "scripts": {
@@ -8,7 +8,8 @@
     "build": "next build",
     "typecheck": "tsc --noEmit",
     "fonts": "node scripts/copy-fonts.mjs",
-    "verify": "node scripts/verify-site.mjs"
+    "verify": "node scripts/verify-site.mjs",
+    "test": "node --test \"src/**/*.test.ts\""
   },
   "dependencies": {
     "animejs": "4.5.0",
