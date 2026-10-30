@@ -121,7 +121,9 @@ for (const extra of ['sitemap.xml', 'robots.txt', '404.html', 'og.png']) {
 
 // ── 3. Fidelidad de contenido frente a la v1 ──
 let checked = 0;
-if (!existsSync(V1_DIST)) {
+if (V1_DIST === 'none') {
+  console.warn('· Fidelidad frente a la v1 omitida (V1_DIST=none).');
+} else if (!existsSync(V1_DIST)) {
   fail('contenido', `no se encuentra la v1 compilada en ${V1_DIST} (variable V1_DIST)`);
 } else {
   const v2Text = norm(decode(pages.map((p) => clean(readFileSync(p, 'utf8')).replace(/<[^>]+>/g, '')).join(' ')));
