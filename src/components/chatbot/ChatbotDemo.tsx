@@ -120,7 +120,7 @@ export function ChatbotDemo() {
                     <BotIcon className="h-4 w-4" />
                   </span>
                   <p className="max-w-[85%] rounded-2xl rounded-bl-md bg-cream-50 px-3.5 py-2.5 text-[0.92rem] leading-snug shadow-[0_1px_0_var(--color-line)]">
-                    ¡Hola! 👋 Escribe una pregunta y descubre cómo podría funcionar un asistente de inteligencia artificial en tu empresa.
+                    ¡Hola! 👋 ¿Puedo ayudarte en algo?
                   </p>
                 </div>
                 {sent && (
@@ -129,7 +129,7 @@ export function ChatbotDemo() {
                     {sent}
                   </p>
                 )}
-                <p className="pt-1 text-center text-[0.72rem] leading-snug text-ink-mute">Esta es una demostración comercial. No estás hablando con una IA real.</p>
+                <p className="pt-1 text-center text-[0.72rem] leading-snug text-ink-mute">Demostración: no estás hablando con una IA real.</p>
               </div>
 
               <form onSubmit={submit} className="border-t border-line bg-cream-50 p-3" noValidate>
