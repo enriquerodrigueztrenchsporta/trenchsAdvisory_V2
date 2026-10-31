@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { Logo } from '@/components/brand/Logo';
-import { Arrow, DiagnosisButton, pad } from '@/components/ui/primitives';
+import { Arrow, DiagnosisButton, TextLink, pad } from '@/components/ui/primitives';
 import { MENU_FEATURES } from '@/content/firm';
 import { FIRMA_NAV, SERVICES } from '@/content/services';
-import { TOOLS_INTRO } from '@/content/tools';
+import { TOOLS, TOOLS_INTRO, toolPath } from '@/content/tools';
 
 const MENUS = [
   {
@@ -25,10 +25,15 @@ const MENUS = [
     feature: MENU_FEATURES.firma,
     items: FIRMA_NAV.map((f) => ({ name: f.name, subtitle: f.subtitle, href: f.path })),
   },
+  {
+    id: 'herramientas',
+    label: TOOLS_INTRO.kicker,
+    prefix: '/herramientas/',
+    // Además del texto, enlace a la página que reúne todas las herramientas.
+    feature: { kicker: TOOLS_INTRO.kicker, text: TOOLS_INTRO.title, more: { label: 'Ver todas las herramientas', href: '/herramientas' } },
+    items: TOOLS.map((t) => ({ name: t.name, subtitle: t.summary, href: toolPath(t) })),
+  },
 ] as const;
-
-/** Enlace directo (sin desplegable) a la sección de herramientas. */
-const TOOLS_LINK = { label: TOOLS_INTRO.kicker, href: '/herramientas' };
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const norm = (p: string) => p.replace(/\/$/, '') || '/';
@@ -142,6 +147,11 @@ export function Header() {
                           <div className="border-r border-line pr-12">
                             <p className="eyebrow">{menu.feature.kicker}</p>
                             <p className="mt-5 font-serif text-[1.65rem] leading-tight tracking-tight">{menu.feature.text}</p>
+                            {'more' in menu.feature && (
+                              <TextLink href={menu.feature.more.href} className="mt-6 text-[0.9rem]">
+                                {menu.feature.more.label}
+                              </TextLink>
+                            )}
                           </div>
                           <ul className="grid grid-cols-2 gap-x-6 gap-y-1">
                             {menu.items.map((item, i) => {
@@ -171,16 +181,6 @@ export function Header() {
                 </li>
               );
             })}
-            <li>
-              <Link
-                href={TOOLS_LINK.href}
-                aria-current={pathname === TOOLS_LINK.href ? 'page' : undefined}
-                className="relative inline-flex h-10 items-center rounded-full px-4 text-[0.92rem] font-medium transition-colors hover:bg-current/[0.07]"
-              >
-                {TOOLS_LINK.label}
-                {pathname.startsWith(TOOLS_LINK.href) && <span className="absolute inset-x-4 -bottom-0.5 h-px bg-gold-500" aria-hidden="true" />}
-              </Link>
-            </li>
           </ul>
           <DiagnosisButton size="sm" variant={light ? 'light' : 'dark'} className="ml-4" />
         </nav>
@@ -236,16 +236,6 @@ export function Header() {
                   </ul>
                 </div>
               ))}
-              <m.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 + 9 * 0.035, duration: 0.6, ease }}>
-                <Link
-                  href={TOOLS_LINK.href}
-                  aria-current={pathname === TOOLS_LINK.href ? 'page' : undefined}
-                  className="flex items-center justify-between gap-4 rounded-2xl border border-cream-50/15 bg-cream-50/[0.04] px-5 py-4 font-serif text-[1.6rem] leading-tight"
-                >
-                  {TOOLS_LINK.label}
-                  <Arrow className="h-4 w-4 text-gold-300" />
-                </Link>
-              </m.div>
               <div className="mt-auto">
                 <DiagnosisButton variant="light" />
               </div>

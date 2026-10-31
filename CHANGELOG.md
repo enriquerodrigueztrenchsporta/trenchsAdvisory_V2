@@ -6,7 +6,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 
 ### Añadido
 
-- **Herramientas gratuitas** (`/herramientas/`): nueva opción en la navegación de escritorio y móvil, con el título
+- **Herramientas gratuitas** (`/herramientas/`): nuevo menú desplegable en la cabecera (escritorio y móvil, como «Servicios» y «La firma»)
+  con las herramientas disponibles, y página propia con el título
   «Entiende y mejora tu negocio» y un catálogo preparado para crecer (una sola tarjeta por ahora).
 - **Calculadora de Rentabilidad Empresarial · Trenchs Financial Lab**
   (`/herramientas/calculadora-rentabilidad/`): cuatro datos y un panel tipo dashboard que se actualiza al escribir,

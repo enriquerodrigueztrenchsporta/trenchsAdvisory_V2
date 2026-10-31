@@ -4,8 +4,10 @@
 export type Tool = {
   slug: string;
   name: string;
-  /** Pregunta o frase corta bajo el nombre (opcional). */
+  /** Pregunta o frase corta bajo el nombre en la tarjeta (opcional). */
   subtitle?: string;
+  /** Línea breve bajo el nombre en el menú desplegable de la cabecera. */
+  summary: string;
   description: string;
   cta: string;
   /** Icono e ilustración de la tarjeta (ver components/tools/ToolCard.tsx). */
@@ -26,6 +28,7 @@ export const TOOLS: Tool[] = [
     name: 'Calculadora de Rentabilidad Empresarial',
     description:
       'Descubre cuánto gana realmente tu empresa, analiza tus costes, calcula tu punto de equilibrio y simula decisiones para mejorar tus resultados.',
+    summary: 'Resultado, margen y punto de equilibrio de tu negocio.',
     cta: 'Analizar mi rentabilidad',
     icon: 'profitability',
     facts: ['Gratis y sin registro', 'Resultados al instante', 'Cálculo en tu navegador'],
@@ -35,6 +38,7 @@ export const TOOLS: Tool[] = [
     name: 'PYME Check',
     subtitle: '¿Dónde puede mejorar tu empresa?',
     description: 'Descubre en menos de un minuto qué áreas de tu negocio podrías mejorar y qué soluciones pueden ayudarte a crecer.',
+    summary: '¿Dónde puede mejorar tu empresa?',
     cta: 'Analizar mi empresa',
     icon: 'pyme-check',
     facts: ['Gratis y sin registro', 'Cinco preguntas', 'Menos de un minuto'],
