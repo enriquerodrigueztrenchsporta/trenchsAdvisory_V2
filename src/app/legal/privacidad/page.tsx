@@ -30,8 +30,7 @@ export default function PrivacyPage() {
             <>
               <h3>Datos que usted nos envía</h3>
               <p>
-                La web no tiene formularios. Si nos escribe por correo electrónico, por ejemplo con el botón «Solicitar
-                diagnóstico», tratamos los datos que usted decida incluir: normalmente su nombre, su dirección de correo, la
+                Si nos escribe por correo electrónico, por ejemplo con el botón «Solicitar diagnóstico», tratamos los datos que usted decida incluir: normalmente su nombre, su dirección de correo, la
                 organización a la que pertenece, su cargo y el contenido de su consulta. Le pedimos que no nos envíe datos
                 especialmente protegidos (como datos de salud) ni datos de terceros que no sean necesarios.
               </p>
@@ -40,6 +39,15 @@ export default function PrivacyPage() {
                 La <Link href="/herramientas/calculadora-rentabilidad">Calculadora de Rentabilidad Empresarial</Link> hace
                 todos los cálculos en su navegador: no guardamos las cifras que introduce ni las enviamos a ningún servidor, y
                 desaparecen al cerrar la página. El botón «Copiar resumen» solo las copia a su portapapeles.
+              </p>
+              <p>
+                <Link href="/herramientas/pyme-check">PYME Check</Link> también funciona solo en su navegador: no guardamos sus
+                respuestas. Si después nos pide contacto desde la herramienta, su programa de correo prepara un mensaje con su
+                nombre, su correo y, si los indica, su empresa, su teléfono y un mensaje. Solo si marca la casilla de
+                autorización incluye además su puntuación, la clasificación, las oportunidades y las soluciones propuestas.
+                Antes de enviarlo puede ver exactamente qué se compartirá, y nada nos llega hasta que usted lo envía. Tratamos los
+                datos de contacto con la finalidad y la base legal del apartado 3; los resultados del autodiagnóstico, además,
+                con su consentimiento (art. 6.1.a RGPD), que puede retirar en cualquier momento escribiéndonos.
               </p>
               <h3>Datos de navegación</h3>
               <p>

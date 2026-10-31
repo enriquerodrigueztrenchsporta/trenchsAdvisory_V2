@@ -77,8 +77,9 @@ export default function LegalNoticePage() {
           title: '5. Contratación, pagos y reembolsos',
           body: (
             <p>
-              La web no permite contratar servicios ni realizar pagos en línea, y no contiene formularios. El contacto se
-              realiza por correo electrónico. Por ese motivo la web no incluye una política de devoluciones o reembolsos:
+              La web no permite contratar servicios ni realizar pagos en línea. El contacto se realiza por correo
+              electrónico, también desde las herramientas gratuitas, cuyos resultados son orientativos y no constituyen
+              asesoramiento profesional. Por ese motivo la web no incluye una política de devoluciones o reembolsos:
               las condiciones de cancelación, facturación y, en su caso, reembolso de cada encargo se recogen en su
               contrato, junto con los derechos que la normativa de consumidores reconozca cuando el cliente tenga la
               condición de consumidor.

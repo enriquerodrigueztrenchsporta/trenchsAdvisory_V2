@@ -4,10 +4,12 @@
 export type Tool = {
   slug: string;
   name: string;
+  /** Pregunta o frase corta bajo el nombre (opcional). */
+  subtitle?: string;
   description: string;
   cta: string;
-  /** Icono de la tarjeta (ver components/tools/ToolIcon.tsx). */
-  icon: 'profitability';
+  /** Icono e ilustración de la tarjeta (ver components/tools/ToolCard.tsx). */
+  icon: 'profitability' | 'pyme-check';
   /** Rasgos breves que aparecen bajo la descripción. */
   facts: string[];
 };
@@ -27,6 +29,15 @@ export const TOOLS: Tool[] = [
     cta: 'Analizar mi rentabilidad',
     icon: 'profitability',
     facts: ['Gratis y sin registro', 'Resultados al instante', 'Cálculo en tu navegador'],
+  },
+  {
+    slug: 'pyme-check',
+    name: 'PYME Check',
+    subtitle: '¿Dónde puede mejorar tu empresa?',
+    description: 'Descubre en menos de un minuto qué áreas de tu negocio podrías mejorar y qué soluciones pueden ayudarte a crecer.',
+    cta: 'Analizar mi empresa',
+    icon: 'pyme-check',
+    facts: ['Gratis y sin registro', 'Cinco preguntas', 'Menos de un minuto'],
   },
 ];
 

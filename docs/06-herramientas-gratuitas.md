@@ -62,3 +62,57 @@ margen de resultado < 10 % → margen reducido (criterio orientativo de la herra
 - `npm run typecheck`, `npm run build`, `npm run verify`.
 - Revisión en Chrome (escritorio y 390 px): cálculo en vivo, error en dato inválido, pérdidas, escenario, sin
   desbordamiento horizontal.
+
+---
+
+# PYME Check — ¿Dónde puede mejorar tu empresa?
+
+Segunda herramienta (`/herramientas/pyme-check/`): autodiagnóstico de cinco preguntas, una cada vez, que funciona
+solo en el navegador (sin APIs, IA ni bases de datos; sin `localStorage`).
+
+## Archivos
+
+| Pieza | Archivo |
+|---|---|
+| Preguntas, opciones, áreas y textos de cada recomendación | `src/lib/pyme-check/questions.ts` |
+| Puntuación, clasificación, oportunidades y texto del pop-up | `src/lib/pyme-check/scoring.ts` |
+| Mensaje comercial | `src/lib/pyme-check/message.ts` |
+| Validación del contacto y `mailto:` (compartido) | `src/lib/contact/contact.ts` |
+| Pruebas | `src/lib/pyme-check/pyme-check.test.ts` |
+| Página | `src/app/herramientas/pyme-check/page.tsx` |
+| Cuestionario y estado | `src/components/pyme-check/PymeCheck.tsx`, `QuestionStep.tsx` |
+| Panel de resultados | `src/components/pyme-check/Results.tsx` |
+| Pop-up y formulario | `src/components/pyme-check/ContactModal.tsx`, `src/components/ui/Modal.tsx` (diálogo accesible reutilizable) |
+
+## Reglas
+
+- **Puntos:** A = 10, B = 5, C = 0. **Puntuación = puntos / 50 × 100.**
+- **Clasificación (orientativa):** 80–100 «buena base de gestión»; 50–79 «oportunidades para mejorar»; 0–49 «podría
+  beneficiarse de mejorar varios procesos».
+- **Oportunidades:** áreas con menos de 10 puntos, de menor a mayor puntuación; a igualdad, en el orden de las
+  preguntas; como máximo tres. Con todo a 10 no hay oportunidades: se muestra «Revisión y mejora continua».
+- **Recomendaciones:** respuesta C → problema y solución del encargo (ausencia); respuesta B → misma solución en
+  lenguaje de mejora u optimización (p. ej. «Evolucionar los informes actuales hacia un dashboard…»). Servicios:
+  Control → Business Intelligence y dashboards empresariales; Rentabilidad → Consultoría financiera y análisis de
+  rentabilidad; Automatización → Inteligencia Artificial Aplicada y automatización de procesos; Clientes → Analítica
+  Avanzada; Planificación → Modelización predictiva y análisis de escenarios.
+
+## Contacto
+
+El pop-up («Podemos ayudarte a mejorar tu negocio.») enumera las áreas y soluciones del resultado. «Quiero mejorar mi
+empresa» abre el formulario (nombre y email obligatorios), con dos casillas desmarcadas e independientes: autorizar
+que se compartan los resultados y haber leído la política de privacidad. «Ver qué información se compartirá» muestra
+el texto exacto. Sin autorización, el mensaje solo lleva contacto, herramienta y mensaje adicional.
+
+El envío reutiliza el sistema de contacto de la web: abre el programa de correo con asunto y mensaje preparados para
+el buzón de la firma. La web no puede saber si se envió, así que no lo confirma; ofrece reabrir el correo o copiar
+el mensaje.
+
+## Pruebas
+
+- `npm test`: 12 pruebas de PYME Check (cinco preguntas con tres opciones, respuestas pendientes, escala,
+  umbrales, orden y desempate de oportunidades, lenguaje de mejora, caso sin problemas, texto del pop-up, mensaje
+  con y sin autorización, validación del contacto) además de las 16 de la calculadora.
+- Revisión en Chrome (escritorio y 390 px): validación sin respuesta, conservación al retroceder, puntuación y
+  oportunidades, foco, pop-up con Escape, formulario y vista previa. No se pulsó el envío final para no abrir el
+  programa de correo del equipo.

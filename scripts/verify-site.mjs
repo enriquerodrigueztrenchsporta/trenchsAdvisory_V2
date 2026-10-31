@@ -43,6 +43,15 @@ const REFORMULATED = new Map([
     'Quiénes somos, «El punto de partida»: se conserva la primera frase; la segunda era la instrucción de la tarjeta volteable de la v1 (en la v2 causa y consecuencia están siempre visibles).',
   ],
   ['Causa y consecuencia ↻', 'Pista de la tarjeta volteable de la v1 (ya no hace falta voltear).'],
+  // PYME Check tiene un formulario de contacto (prepara un correo): la web ya no puede decir que no tiene formularios.
+  [
+    'La web no tiene formularios. Si nos escribe por correo electrónico, por ejemplo con el botón «Solicitar diagnóstico», tratamos los datos que usted decida incluir: normalmente su nombre, su dirección de correo, la organización a la que pertenece, su cargo y el contenido de su consulta. Le pedimos que no nos envíe datos especialmente protegidos (como datos de salud) ni datos de terceros que no sean necesarios.',
+    'Privacidad, apartado 2: se retira «La web no tiene formularios»; el subapartado «Herramientas gratuitas» explica la calculadora y PYME Check.',
+  ],
+  [
+    'La web no permite contratar servicios ni realizar pagos en línea, y no contiene formularios. El contacto se realiza por correo electrónico. Por ese motivo la web no incluye una política de devoluciones o reembolsos: las condiciones de cancelación, facturación y, en su caso, reembolso de cada encargo se recogen en su contrato, junto con los derechos que la normativa de consumidores reconozca cuando el cliente tenga la condición de consumidor.',
+    'Aviso legal, apartado 5: se retira «no contiene formularios» y se menciona el carácter orientativo de las herramientas gratuitas.',
+  ],
   ['Última actualización: 20 de octubre de 2026.', 'Fecha de revisión de los textos legales (LEGAL_UPDATED), actualizada con las Herramientas gratuitas.'],
 ]);
 

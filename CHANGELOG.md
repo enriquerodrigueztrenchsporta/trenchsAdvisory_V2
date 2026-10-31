@@ -12,11 +12,15 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
   (`/herramientas/calculadora-rentabilidad/`): cuatro datos y un panel tipo dashboard que se actualiza al escribir,
   con resultado mensual estimado, margen de contribución, punto de equilibrio, margen de seguridad, distribución de
   la facturación, simulación de escenarios, diagnóstico automático y resumen copiable. Nada sale del navegador.
+- **PYME Check — ¿Dónde puede mejorar tu empresa?** (`/herramientas/pyme-check/`): autodiagnóstico de cinco
+  preguntas con puntuación sobre 100, evaluación por áreas, hasta tres oportunidades con soluciones y servicios, y
+  pop-up con formulario de contacto que, con autorización, adjunta el diagnóstico (envío por correo prellenado).
 - `npm test` (node:test) y su ejecución en el flujo de publicación.
 
 ### Cambiado
 
-- Privacidad: nuevo párrafo «Herramientas gratuitas» (cálculo local, sin guardar ni enviar cifras).
+- Privacidad: subapartado «Herramientas gratuitas» (la calculadora no envía nada; PYME Check solo comparte el
+  diagnóstico con autorización) y se retira «La web no tiene formularios». Aviso legal, apartado 5: igual.
 - La barra fija «Solicitar diagnóstico» de móvil no aparece en las herramientas.
 
 ## [2.0.0] - 2026-10-30

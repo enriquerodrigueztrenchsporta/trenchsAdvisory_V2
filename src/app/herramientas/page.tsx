@@ -14,9 +14,9 @@ export const metadata: Metadata = pageMetadata({
 
 // Cómo funcionan las herramientas: lo que la persona hace y qué pasa con sus datos.
 const HOW = [
-  { t: 'Introduce tus cifras', d: 'Datos básicos de un mes, sin IVA. No pedimos registro ni datos personales para ver los resultados.' },
-  { t: 'Entiende y simula', d: 'Indicadores, gráficos y un simulador para ver el efecto de cada decisión antes de tomarla.' },
-  { t: 'Decide si hablamos', d: 'Si quieres, nos envías tu diagnóstico. Sin tu autorización, tus cifras no salen de tu navegador.' },
+  { t: 'Elige una herramienta', d: 'Sin registro y sin dar datos personales para ver los resultados.' },
+  { t: 'Responde y entiende', d: 'Todo se calcula en tu navegador y obtienes el resultado al momento.' },
+  { t: 'Decide si hablamos', d: 'Tus resultados no salen de tu navegador salvo que tú decidas enviárnoslos.' },
 ];
 
 export default function ToolsPage() {
@@ -29,7 +29,8 @@ export default function ToolsPage() {
           <h2 id="catalogo-titulo" className="sr-only">
             Herramientas disponibles
           </h2>
-          <ul className="grid gap-6">
+          {/* Las tarjetas se reparten solas: una por fila en móvil, dos o tres según el ancho disponible. */}
+          <ul className="grid gap-6 md:grid-cols-[repeat(auto-fit,minmax(22rem,1fr))]">
             {TOOLS.map((tool) => (
               <li key={tool.slug}>
                 <ToolCard tool={tool} />
