@@ -2,6 +2,30 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado semántico.
 
+## [2.1.0] - 2026-10-31
+
+### Añadido
+
+- **Herramientas gratuitas** (`/herramientas/`): nuevo menú desplegable en la cabecera (escritorio y móvil, como «Servicios» y «La firma»)
+  con las herramientas disponibles, y página propia con el título
+  «Entiende y mejora tu negocio» y un catálogo preparado para crecer (una sola tarjeta por ahora).
+- **Calculadora de Rentabilidad Empresarial · Trenchs Financial Lab**
+  (`/herramientas/calculadora-rentabilidad/`): cuatro datos y un panel tipo dashboard que se actualiza al escribir,
+  con resultado mensual estimado, margen de contribución, punto de equilibrio, margen de seguridad, distribución de
+  la facturación, simulación de escenarios, diagnóstico automático y resumen copiable. Nada sale del navegador.
+- **PYME Check — ¿Dónde puede mejorar tu empresa?** (`/herramientas/pyme-check/`): autodiagnóstico de cinco
+  preguntas con puntuación sobre 100, evaluación por áreas, hasta tres oportunidades con soluciones y servicios, y
+  pop-up con formulario de contacto que, con autorización, adjunta el diagnóstico (envío por correo prellenado).
+- **Chatbot demostrativo global** (botón flotante en todas las páginas): cualquier mensaje abre una propuesta de
+  asistentes de IA con formulario de contacto. Sin IA, sin APIs y sin guardar ni enviar lo escrito en el chat.
+- `npm test` (node:test) y su ejecución en el flujo de publicación.
+
+### Cambiado
+
+- Privacidad: subapartado «Herramientas gratuitas» (la calculadora no envía nada; PYME Check solo comparte el
+  diagnóstico con autorización) y se retira «La web no tiene formularios». Aviso legal, apartado 5: igual.
+- La barra fija «Solicitar diagnóstico» de móvil no aparece en las herramientas.
+
 ## [2.0.0] - 2026-10-30
 
 Rediseño completo sobre el contenido de la v1.0 (repositorio `Trenchs-Advisory`, commit `cbbf95b`). Todo el texto de

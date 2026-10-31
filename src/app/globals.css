@@ -22,6 +22,10 @@
   --color-ink-soft: #4d524f;
   --color-ink-mute: #666a66;
   --color-line: #d7d2c6;
+  /* Solo para pérdidas y valores negativos en la calculadora (texto AA sobre crema). */
+  --color-loss: #9c3b2a;
+  /* Su equivalente sobre verde profundo (panel de la calculadora). */
+  --color-loss-soft: #f0a796;
 
   --font-serif: 'Newsreader', 'Newsreader Fallback', Georgia, serif;
   --font-sans: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -473,6 +477,65 @@ html:not(.js) .scatter > * {
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--color-ink-mute);
+  }
+}
+
+/* ── Calculadora: deslizadores del simulador (la pista se dibuja aparte; aquí solo el control y su tirador) ── */
+.sim-range {
+  appearance: none;
+  height: 1.75rem;
+  background: transparent;
+  cursor: pointer;
+}
+.sim-range::-webkit-slider-runnable-track {
+  height: 1.75rem;
+  background: transparent;
+}
+.sim-range::-moz-range-track {
+  background: transparent;
+}
+.sim-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.125rem;
+  border-radius: 999px;
+  background: var(--color-cream-50);
+  border: 2px solid var(--color-forest-900);
+  box-shadow: 0 4px 12px -4px rgb(20 38 31 / 0.45);
+  transition: transform 0.3s var(--ease-out-expo);
+}
+.sim-range::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background: var(--color-cream-50);
+  border: 2px solid var(--color-forest-900);
+  box-shadow: 0 4px 12px -4px rgb(20 38 31 / 0.45);
+}
+.sim-range:hover::-webkit-slider-thumb,
+.sim-range:active::-webkit-slider-thumb {
+  transform: scale(1.12);
+}
+.sim-range:focus-visible {
+  outline: none;
+}
+.sim-range:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--color-forest-900);
+  outline-offset: 3px;
+}
+.sim-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--color-forest-900);
+  outline-offset: 3px;
+}
+
+/* ── Chatbot demostrativo: en móvil sube por encima de la barra «Solicitar diagnóstico» cuando está visible ── */
+.chat-dock {
+  transition: bottom 0.5s var(--ease-out-expo);
+}
+@media (max-width: 1023.98px) {
+  html[data-mobile-cta] .chat-dock {
+    bottom: calc(5.25rem + env(safe-area-inset-bottom));
   }
 }
 

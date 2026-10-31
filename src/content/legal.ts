@@ -21,7 +21,7 @@ export const OWNER = {
 };
 
 /** Fecha de la última revisión de los textos legales (AAAA-MM-DD). */
-export const LEGAL_UPDATED = '2026-10-20';
+export const LEGAL_UPDATED = '2026-10-30';
 
 /** Titular para el copyright y los textos: razón social o, si no está, el nombre comercial. */
 export const holder = () => OWNER.name.trim() || OWNER.tradeName;

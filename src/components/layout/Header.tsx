@@ -5,9 +5,10 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { Logo } from '@/components/brand/Logo';
-import { Arrow, DiagnosisButton, pad } from '@/components/ui/primitives';
+import { Arrow, DiagnosisButton, TextLink, pad } from '@/components/ui/primitives';
 import { MENU_FEATURES } from '@/content/firm';
 import { FIRMA_NAV, SERVICES } from '@/content/services';
+import { TOOLS, TOOLS_INTRO, toolPath } from '@/content/tools';
 
 const MENUS = [
   {
@@ -23,6 +24,14 @@ const MENUS = [
     prefix: '/firma/',
     feature: MENU_FEATURES.firma,
     items: FIRMA_NAV.map((f) => ({ name: f.name, subtitle: f.subtitle, href: f.path })),
+  },
+  {
+    id: 'herramientas',
+    label: TOOLS_INTRO.kicker,
+    prefix: '/herramientas/',
+    // Además del texto, enlace a la página que reúne todas las herramientas.
+    feature: { kicker: TOOLS_INTRO.kicker, text: TOOLS_INTRO.title, more: { label: 'Ver todas las herramientas', href: '/herramientas' } },
+    items: TOOLS.map((t) => ({ name: t.name, subtitle: t.summary, href: toolPath(t) })),
   },
 ] as const;
 
@@ -138,6 +147,11 @@ export function Header() {
                           <div className="border-r border-line pr-12">
                             <p className="eyebrow">{menu.feature.kicker}</p>
                             <p className="mt-5 font-serif text-[1.65rem] leading-tight tracking-tight">{menu.feature.text}</p>
+                            {'more' in menu.feature && (
+                              <TextLink href={menu.feature.more.href} className="mt-6 text-[0.9rem]">
+                                {menu.feature.more.label}
+                              </TextLink>
+                            )}
                           </div>
                           <ul className="grid grid-cols-2 gap-x-6 gap-y-1">
                             {menu.items.map((item, i) => {

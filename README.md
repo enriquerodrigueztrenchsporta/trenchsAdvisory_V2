@@ -24,6 +24,8 @@ Documentación del proceso en `docs/`:
 | [`03-correspondencia-v1-v2.md`](docs/03-correspondencia-v1-v2.md) | Dónde está cada contenido de la v1 en la v2 |
 | [`04-lighthouse.md`](docs/04-lighthouse.md) | Comparativa Lighthouse antes/después |
 | [`05-pendientes.md`](docs/05-pendientes.md) | Lo que debe aportar el negocio |
+| [`07-chatbot-demostrativo.md`](docs/07-chatbot-demostrativo.md) | Chatbot demostrativo global: comportamiento, privacidad y pruebas |
+| [`06-herramientas-gratuitas.md`](docs/06-herramientas-gratuitas.md) | Herramientas gratuitas: calculadora y PYME Check (reglas, contacto y pruebas) |
 
 ## Stack
 
@@ -44,6 +46,7 @@ npm run dev        # http://localhost:3000
 npm run build      # genera out/
 npm run verify     # comprueba out/ (ver más abajo)
 npm run typecheck
+npm test           # pruebas de las herramientas gratuitas (node:test)
 ```
 
 `npm run verify` revisa la web compilada:
@@ -77,8 +80,17 @@ src/
     motion/            proveedor de movimiento, apariciones, texto que se ilumina
     seo/               datos estructurados y migas de pan
     ui/                botones, enlaces, cabeceras de sección, copiar correo
+    tools/             tarjeta del catálogo de Herramientas gratuitas
+    calculator/        Calculadora de Rentabilidad: datos del mes y panel tipo dashboard
+    pyme-check/        PYME Check: cuestionario, resultados y pop-up de contacto
+    chatbot/           chatbot demostrativo global (botón flotante, ventana y pop-up)
+    contact/           formulario de contacto compartido por las herramientas
   content/             contenido migrado de la v1 (servicios, firma, titular)
   lib/                 datos de contacto, URLs y metadatos
+    profitability/     motor financiero puro (cálculo, escenarios, diagnóstico, resumen) y sus pruebas
+    pyme-check/        preguntas, puntuación, recomendaciones y mensaje de PYME Check, y sus pruebas
+    contact/           validación del contacto y envío por correo (mailto:)
+    chatbot/           mensaje comercial del chatbot demostrativo y sus pruebas
 scripts/               verificación, servidor estático y copia de fuentes
 docs/                  auditoría, plan, correspondencia, Lighthouse, pendientes
 ```
