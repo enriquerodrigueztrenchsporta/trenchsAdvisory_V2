@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { ChatbotDemo } from '@/components/chatbot/ChatbotDemo';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { MobileCta } from '@/components/layout/MobileCta';
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </main>
           <Footer />
           <MobileCta />
+          <ChatbotDemo />
           <RevealObserver />
         </MotionProvider>
       </body>

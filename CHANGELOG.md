@@ -16,6 +16,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). V
 - **PYME Check — ¿Dónde puede mejorar tu empresa?** (`/herramientas/pyme-check/`): autodiagnóstico de cinco
   preguntas con puntuación sobre 100, evaluación por áreas, hasta tres oportunidades con soluciones y servicios, y
   pop-up con formulario de contacto que, con autorización, adjunta el diagnóstico (envío por correo prellenado).
+- **Chatbot demostrativo global** (botón flotante en todas las páginas): cualquier mensaje abre una propuesta de
+  asistentes de IA con formulario de contacto. Sin IA, sin APIs y sin guardar ni enviar lo escrito en el chat.
 - `npm test` (node:test) y su ejecución en el flujo de publicación.
 
 ### Cambiado

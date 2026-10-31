@@ -31,6 +31,12 @@ export function MobileCta() {
   }, [pathname]);
 
   const show = past && !atClosing && !legal;
+
+  // Avisa a otros elementos flotantes (el chatbot) para que se coloquen encima de la barra y no la tapen.
+  useEffect(() => {
+    document.documentElement.toggleAttribute('data-mobile-cta', show);
+    return () => document.documentElement.removeAttribute('data-mobile-cta');
+  }, [show]);
   return (
     <AnimatePresence>
       {show && (

@@ -49,6 +49,15 @@ export default function PrivacyPage() {
                 datos de contacto con la finalidad y la base legal del apartado 3; los resultados del autodiagnóstico, además,
                 con su consentimiento (art. 6.1.a RGPD), que puede retirar en cualquier momento escribiéndonos.
               </p>
+              <h3>Asistente virtual de demostración</h3>
+              <p>
+                El asistente que aparece en la esquina de la web es una demostración: no usa inteligencia artificial ni
+                envía lo que usted escribe a ningún servicio. Ese texto solo existe en su navegador mientras la ventana está
+                abierta y se borra al cerrarla; no lo guardamos ni nos llega. Si después nos pide información desde el
+                formulario del asistente, su programa de correo prepara un mensaje solo con los datos que usted rellene
+                (nombre, correo y, si los indica, empresa, teléfono, sector y mensaje), sin lo escrito en el chat. Tratamos
+                esos datos con la finalidad y la base legal del apartado 3.
+              </p>
               <h3>Datos de navegación</h3>
               <p>
                 La web no utiliza cookies, herramientas de analítica, publicidad ni contenidos de terceros incrustados, por

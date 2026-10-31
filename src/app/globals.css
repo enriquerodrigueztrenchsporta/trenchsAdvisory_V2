@@ -529,6 +529,16 @@ html:not(.js) .scatter > * {
   outline-offset: 3px;
 }
 
+/* ── Chatbot demostrativo: en móvil sube por encima de la barra «Solicitar diagnóstico» cuando está visible ── */
+.chat-dock {
+  transition: bottom 0.5s var(--ease-out-expo);
+}
+@media (max-width: 1023.98px) {
+  html[data-mobile-cta] .chat-dock {
+    bottom: calc(5.25rem + env(safe-area-inset-bottom));
+  }
+}
+
 /* ── Textos legales ── */
 .legal {
   color: var(--color-ink-soft);
